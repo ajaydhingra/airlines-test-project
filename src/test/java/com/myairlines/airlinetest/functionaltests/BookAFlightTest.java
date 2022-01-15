@@ -82,7 +82,7 @@ public class BookAFlightTest {
 
 
     @Disabled
-    @ParameterizedTest(name = "{1} To {2}")
+    @ParameterizedTest(name = "{1} To {2} One Way")
     @MethodSource("getArgumentsForTestingOneWayFlightBooking")
     @Order(2)
     void testOneWayFlightBooking(String country, String departureCity, String arrivalCity, int adults, int children, int infants, String currency) {
@@ -124,7 +124,8 @@ public class BookAFlightTest {
                 Arguments.of("United States (USA)", "Bengaluru (BLR)", "Chennai (MAA)", 2, 3, 0, "USD"),
                 Arguments.of("United States (USA)", "Bangkok (BKK)", "Kabul (KBL)", 1, 1, 1, "USD"));
     }
-    @ParameterizedTest(name = "{1} To {2}")
+
+    @ParameterizedTest(name = "{1} To {2} Two Way")
     @MethodSource("getArgumentsForTestingTwoWayFlightBooking")
     @Order(2)
     void testTwoWayFlightBooking(String country, String departureCity, String arrivalCity, int adults, int children, int infants, String currency) {
@@ -132,8 +133,8 @@ public class BookAFlightTest {
         airlinesHomePage.open();
         airlinesHomePage.selectCountry(country);
         assertThat(airlinesHomePage.getCountry(), equalTo(country));
-        boolean isOneWaySelected = airlinesHomePage.checkIfOneWaySelected();
-        assertThat(isOneWaySelected, is(true));
+        boolean isOneTwoWaySelected = airlinesHomePage.selectTwoWay();
+        assertThat(isOneTwoWaySelected, is(true));
         String departureCityValue = airlinesHomePage.selectDepartureCity(departureCity);
         assertThat(departureCityValue, equalTo(departureCity));
         String arrivalCityValue = airlinesHomePage.selectArrivalCity(arrivalCity);
@@ -141,8 +142,9 @@ public class BookAFlightTest {
         LocalDate departureDate = LocalDate.now().plusDays(70);
         String selectedDepartureDate = airlinesHomePage.selectDepartureDate(departureDate);
         assertThat(selectedDepartureDate, equalTo(DateTimeFormatter.ofPattern("dd/MM").format(departureDate)));
-        boolean isReturnDateDisabled = airlinesHomePage.checkIfReturnDateDisabled();
-        assertThat(isReturnDateDisabled, is(true));
+        LocalDate arrivalDate = LocalDate.now().plusDays(90);
+        String selectedArrivalDate = airlinesHomePage.selectArrivalDate(arrivalDate);
+        assertThat(selectedArrivalDate, equalTo(DateTimeFormatter.ofPattern("dd/MM").format(arrivalDate)));
         String passengerInfo = airlinesHomePage.selectPassengers(adults, children, infants);
         String expectedPassengerInfo = adults + " Adult";
         if (children > 0) {

@@ -48,6 +48,11 @@ public class AirlinesHomePage {
         return driver.findElement(By.id("ctl00_mainContent_rbtnl_Trip_0")).isSelected();
     }
 
+    public boolean selectTwoWay() {
+        driver.findElement(By.id("ctl00_mainContent_rbtnl_Trip_1")).click();
+        return driver.findElement(By.id("ctl00_mainContent_rbtnl_Trip_1")).isSelected();
+    }
+
     public String selectDepartureCity(String departureCity) {
         WebElement departureCityElement = driver.findElement(By.id("ctl00_mainContent_ddl_originStation1_CTXT"));
         departureCityElement.click();
@@ -76,6 +81,23 @@ public class AirlinesHomePage {
         }
         driver.findElement(By.className("ui-datepicker-group-first")).findElement(By.linkText(String.valueOf(day))).click();
         return departureDateElement.getAttribute("value");
+    }
+    public String selectArrivalDate(LocalDate arrivalDate) {
+
+        WebElement arrivalDateElement = driver.findElement(By.id("ctl00_mainContent_view_date2"));
+        arrivalDateElement.click();
+        String month = arrivalDate.getMonth().toString();
+        int day = arrivalDate.getDayOfMonth();
+        WebElement firstCard = driver.findElement(By.className("ui-datepicker-group-first"));
+        WebElement monthElementInFirstCard = firstCard.findElement(By.className("ui-datepicker-month"));
+        String monthInFirstCard = monthElementInFirstCard.getText();
+        while (!monthInFirstCard.equalsIgnoreCase(month)) {
+            driver.findElement(By.xpath("//span[@class='ui-icon ui-icon-circle-triangle-e']")).click();
+            monthInFirstCard = driver.findElement(By.className("ui-datepicker-group-first")).findElement(By.className("ui-datepicker-month")).getText();
+        }
+        driver.findElement(By.className("ui-datepicker-group-first")).findElement(By.linkText(String.valueOf(day))).click();
+        return arrivalDateElement.getAttribute("value");
+
     }
 
     public boolean checkIfReturnDateDisabled() {
@@ -112,4 +134,7 @@ public class AirlinesHomePage {
         currencySelect.selectByVisibleText(currency);
         return currencySelect.getFirstSelectedOption().getText();
     }
+
+
+
 }
