@@ -81,6 +81,7 @@ public class BookAFlightTest {
     }
 
 
+    @Disabled
     @ParameterizedTest(name = "{1} To {2}")
     @MethodSource("getArgumentsForTestingOneWayFlightBooking")
     @Order(2)
@@ -119,6 +120,48 @@ public class BookAFlightTest {
 
 
     public Stream<Arguments> getArgumentsForTestingOneWayFlightBooking() {
+        return Stream.of(Arguments.of("India", "Chennai (MAA)", "Bengaluru (BLR)", 3, 1, 2, "INR"),
+                Arguments.of("United States (USA)", "Bengaluru (BLR)", "Chennai (MAA)", 2, 3, 0, "USD"),
+                Arguments.of("United States (USA)", "Bangkok (BKK)", "Kabul (KBL)", 1, 1, 1, "USD"));
+    }
+    @ParameterizedTest(name = "{1} To {2}")
+    @MethodSource("getArgumentsForTestingTwoWayFlightBooking")
+    @Order(2)
+    void testTwoWayFlightBooking(String country, String departureCity, String arrivalCity, int adults, int children, int infants, String currency) {
+        AirlinesHomePage airlinesHomePage = new AirlinesHomePage(driver, applicationURL);
+        airlinesHomePage.open();
+        airlinesHomePage.selectCountry(country);
+        assertThat(airlinesHomePage.getCountry(), equalTo(country));
+        boolean isOneWaySelected = airlinesHomePage.checkIfOneWaySelected();
+        assertThat(isOneWaySelected, is(true));
+        String departureCityValue = airlinesHomePage.selectDepartureCity(departureCity);
+        assertThat(departureCityValue, equalTo(departureCity));
+        String arrivalCityValue = airlinesHomePage.selectArrivalCity(arrivalCity);
+        assertThat(arrivalCityValue, equalTo(arrivalCity));
+        LocalDate departureDate = LocalDate.now().plusDays(70);
+        String selectedDepartureDate = airlinesHomePage.selectDepartureDate(departureDate);
+        assertThat(selectedDepartureDate, equalTo(DateTimeFormatter.ofPattern("dd/MM").format(departureDate)));
+        boolean isReturnDateDisabled = airlinesHomePage.checkIfReturnDateDisabled();
+        assertThat(isReturnDateDisabled, is(true));
+        String passengerInfo = airlinesHomePage.selectPassengers(adults, children, infants);
+        String expectedPassengerInfo = adults + " Adult";
+        if (children > 0) {
+            expectedPassengerInfo = expectedPassengerInfo + ", " + children + " Child";
+        }
+        if (infants > 0) {
+            expectedPassengerInfo = expectedPassengerInfo + ", " + infants + " Infant";
+        }
+
+
+        assertThat(passengerInfo, equalTo(expectedPassengerInfo));
+        String selectedCurrency = airlinesHomePage.selectCurrency(currency);
+        assertThat(selectedCurrency, equalTo(currency));
+        airlinesHomePage.clickSearchButton();
+
+    }
+
+
+    public Stream<Arguments> getArgumentsForTestingTwoWayFlightBooking() {
         return Stream.of(Arguments.of("India", "Chennai (MAA)", "Bengaluru (BLR)", 3, 1, 2, "INR"),
                 Arguments.of("United States (USA)", "Bengaluru (BLR)", "Chennai (MAA)", 2, 3, 0, "USD"),
                 Arguments.of("United States (USA)", "Bangkok (BKK)", "Kabul (KBL)", 1, 1, 1, "USD"));
