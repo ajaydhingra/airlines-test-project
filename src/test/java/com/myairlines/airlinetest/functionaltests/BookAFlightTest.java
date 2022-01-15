@@ -66,10 +66,10 @@ public class BookAFlightTest {
         return driver;
     }
 
-    @Disabled
+    //@Disabled
     @Test
     @DisplayName("Test_Departure_Arrival_City_Error_Message")
-    @Order(1)
+    //@Order(1)
     void testDepartureArrivalCityErrorMessage() {
         AirlinesHomePage airlinesHomePage = new AirlinesHomePage(driver, applicationURL);
         airlinesHomePage.open();
@@ -81,10 +81,10 @@ public class BookAFlightTest {
     }
 
 
-    @Disabled
+    //@Disabled
     @ParameterizedTest(name = "{1} To {2} One Way")
     @MethodSource("getArgumentsForTestingOneWayFlightBooking")
-    @Order(2)
+    //@Order(2)
     void testOneWayFlightBooking(String country, String departureCity, String arrivalCity, int adults, int children, int infants, String currency) {
         AirlinesHomePage airlinesHomePage = new AirlinesHomePage(driver, applicationURL);
         airlinesHomePage.open();
@@ -127,7 +127,7 @@ public class BookAFlightTest {
 
     @ParameterizedTest(name = "{1} To {2} Two Way")
     @MethodSource("getArgumentsForTestingTwoWayFlightBooking")
-    @Order(2)
+    //@Order(2)
     void testTwoWayFlightBooking(String country, String departureCity, String arrivalCity, int adults, int children, int infants, String currency) {
         AirlinesHomePage airlinesHomePage = new AirlinesHomePage(driver, applicationURL);
         airlinesHomePage.open();
