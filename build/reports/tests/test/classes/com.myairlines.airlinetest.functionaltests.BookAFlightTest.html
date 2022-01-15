@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - BookAFlightTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>BookAFlightTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/com.myairlines.airlinetest.functionaltests.html">com.myairlines.airlinetest.functionaltests</a> &gt; BookAFlightTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">4</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">1</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">28.282s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox skipped" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+<li>
+<a href="#tab2">Standard error</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Method name</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="skipped">Test_Departure_Arrival_City_Error_Message</td>
+<td class="skipped">testDepartureArrivalCityErrorMessage()</td>
+<td class="skipped">-</td>
+<td class="skipped">ignored</td>
+</tr>
+<tr>
+<td class="success">Chennai (MAA) To Bengaluru (BLR)</td>
+<td class="success">testOneWayFlightBooking(String, String, String, int, int, int, String)[1]</td>
+<td class="success">12.056s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Bengaluru (BLR) To Chennai (MAA)</td>
+<td class="success">testOneWayFlightBooking(String, String, String, int, int, int, String)[2]</td>
+<td class="success">8.057s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Bangkok (BKK) To Kabul (KBL)</td>
+<td class="success">testOneWayFlightBooking(String, String, String, int, int, int, String)[3]</td>
+<td class="success">8.168s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>09:54:50.310 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+09:54:50.327 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+09:54:50.343 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.myairlines.airlinetest.functionaltests.BookAFlightTest] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+09:54:50.360 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.myairlines.airlinetest.functionaltests.BookAFlightTest], using SpringBootContextLoader
+09:54:50.377 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.myairlines.airlinetest.functionaltests.BookAFlightTest]: class path resource [com/myairlines/airlinetest/functionaltests/BookAFlightTest-context.xml] does not exist
+09:54:50.377 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.myairlines.airlinetest.functionaltests.BookAFlightTest]: class path resource [com/myairlines/airlinetest/functionaltests/BookAFlightTestContext.groovy] does not exist
+09:54:50.377 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.myairlines.airlinetest.functionaltests.BookAFlightTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+09:54:50.377 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.myairlines.airlinetest.functionaltests.BookAFlightTest]: BookAFlightTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+09:54:50.410 [Test worker] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.myairlines.airlinetest.functionaltests.BookAFlightTest]
+09:54:50.460 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [C:\git\airlines-test-project\build\classes\java\main\com\myairlines\airlinetest\AirlineTestApplication.class]
+09:54:50.460 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.myairlines.airlinetest.AirlineTestApplication for test class com.myairlines.airlinetest.functionaltests.BookAFlightTest
+09:54:50.560 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [com.myairlines.airlinetest.functionaltests.BookAFlightTest]: using defaults.
+09:54:50.560 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+09:54:50.560 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Skipping candidate TestExecutionListener [org.springframework.test.context.transaction.TransactionalTestExecutionListener] due to a missing dependency. Specify custom listener classes or make the default listener classes and their required dependencies available. Offending class: [org/springframework/transaction/interceptor/TransactionAttributeSource]
+09:54:50.560 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Skipping candidate TestExecutionListener [org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener] due to a missing dependency. Specify custom listener classes or make the default listener classes and their required dependencies available. Offending class: [org/springframework/transaction/interceptor/TransactionAttribute]
+09:54:50.576 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@5d465e4b, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@53e211ee, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@41a90fa8, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@3d8bbcdc, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@52500920, org.springframework.test.context.support.DirtiesContextTestExecutionListener@117e0fe5, org.springframework.test.context.event.EventPublishingTestExecutionListener@18a3962d, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@78aea4b9, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@2a65bb85, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@4b85880b, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@4f936da8, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@4215838f, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@452ba1db]
+09:54:50.609 [Test worker] DEBUG org.springframework.boot.ApplicationServletEnvironment - Activating profiles []
+09:54:50.609 [Test worker] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.6.2)
+
+2022-01-15 09:54:50.927  INFO 11112 --- [    Test worker] c.m.a.functionaltests.BookAFlightTest    : Starting BookAFlightTest using Java 17.0.1 on DESKTOP-CKTFDM5 with PID 11112 (started by ajayd in C:\git\airlines-test-project)
+2022-01-15 09:54:50.927  INFO 11112 --- [    Test worker] c.m.a.functionaltests.BookAFlightTest    : No active profile set, falling back to default profiles: default
+2022-01-15 09:54:52.677  INFO 11112 --- [    Test worker] c.m.a.functionaltests.BookAFlightTest    : Started BookAFlightTest in 2.065 seconds (JVM running for 3.431)
+2022-01-15 09:54:52.710  INFO 11112 --- [    Test worker] c.m.a.extensions.MyReportingExtension    : Entering beforeAll of MyReportingExtension
+2022-01-15 09:54:52.849  INFO 11112 --- [    Test worker] c.m.a.extensions.MyReportingExtension    : Exiting beforeAll of MyReportingExtension
+2022-01-15 09:54:53.227  INFO 11112 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 97.0.4692.71 (resolved driver for Chrome 97)
+2022-01-15 09:54:53.256  INFO 11112 --- [    Test worker] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\ajayd\.cache\selenium\chromedriver\win32\97.0.4692.71\chromedriver.exe
+2022-01-15 09:54:54.927  INFO 11112 --- [ null to remote] o.o.selenium.remote.ProtocolHandshake    : Detected dialect: W3C
+2022-01-15 09:54:55.144  INFO 11112 --- [    Test worker] c.m.a.extensions.MyReportingExtension    : Test is disabled: Test_Departure_Arrival_City_Error_Message
+passenger info 3 Adult, 1 Child, 2 Infant
+2022-01-15 09:55:07.228  INFO 11112 --- [    Test worker] c.m.a.extensions.MyReportingExtension    : Test is successful: Chennai (MAA) To Bengaluru (BLR)
+passenger info 2 Adult, 3 Child
+2022-01-15 09:55:15.301  INFO 11112 --- [    Test worker] c.m.a.extensions.MyReportingExtension    : Test is successful: Bengaluru (BLR) To Chennai (MAA)
+passenger info 1 Adult, 1 Child, 1 Infant
+2022-01-15 09:55:23.471  INFO 11112 --- [    Test worker] c.m.a.extensions.MyReportingExtension    : Test is successful: Bangkok (BKK) To Kabul (KBL)
+2022-01-15 09:55:23.661  INFO 11112 --- [    Test worker] c.m.a.extensions.MyReportingExtension    : Entering afterAll of MyReportingExtension
+2022-01-15 09:55:24.368  INFO 11112 --- [    Test worker] c.m.a.extensions.MyReportingExtension    : Exiting afterAll of MyReportingExtension
+</pre>
+</span>
+</div>
+<div id="tab2" class="tab">
+<h2>Standard error</h2>
+<span class="code">
+<pre>Starting ChromeDriver 97.0.4692.71 (adefa7837d02a07a604c1e6eff0b3a09422ab88d-refs/branch-heads/4692@{#1247}) on port 23348
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 7.3.2</a> at Jan 15, 2022, 9:55:24 AM</p>
+</div>
+</div>
+</body>
+</html>
